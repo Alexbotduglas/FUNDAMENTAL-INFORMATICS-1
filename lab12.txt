@@ -1,0 +1,73 @@
+#include "stdafx.h"
+#include <iostream> 
+#include <conio.h> 
+
+using namespace std;
+
+int main() {
+		int power(int, int);
+		setlocale(0, "Rus");
+		cout << "введите число" << endl;
+		int A;
+		int a2=0;
+		int i = 0;
+		int chast;
+		int a2k = 0;
+		cin >> A;
+		
+		if ((A > -11 && A < 11) || (A<100 && A>-100 && A % 10 == 0)) 
+			{
+				cout << "с этим числом нельзя произвести операцию" << endl;
+				_getch();
+				return 0;
+			}
+
+		a2k = (abs(A) % 100) / 10;
+
+		//cout << a2k << endl;
+			
+
+		
+			chast = abs(A);
+			while (chast > 99)
+			{
+				i++;
+				chast = chast / 10;
+
+			}
+				
+			a2 = chast % 10;
+			if (A > 0)
+				A = A - (a2 - a2k)*power(10, i) + (a2 - a2k)*power(10, 1);
+			else 
+				A = A + (a2 - a2k)*power(10, i) - (a2 - a2k)*power(10, 1);
+			cout << A << endl;
+			_getch();
+		}
+	
+
+int power(int x, int n)
+	{
+		int a = 1;
+		while (n) 
+		{
+			if (n % 2) 
+			{
+				a *= x;
+				n--;
+			}
+
+			else 
+			{
+				x *= x;
+				n /= 2;
+			}
+		}
+		
+		return a;
+		_getch();
+	}
+
+
+
+  

@@ -1,0 +1,233 @@
+{\rtf1\ansi\ansicpg1251\deff0\nouicompat\deflang1049{\fonttbl{\f0\fnil Consolas;}{\f1\fnil\fcharset204 Consolas;}{\f2\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red128\green128\blue128;\red163\green21\blue21;\red0\green0\blue0;\red0\green0\blue255;\red0\green128\blue128;\red0\green128\blue0;}
+{\*\generator Riched20 10.0.15063}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\cf1\f0\fs19 #include\cf2 "stdafx.h"\cf3\par
+\cf1 #include\cf2 <iostream>\cf3  \par
+\cf1 #include\cf2 <conio.h>\cf3  \par
+\par
+\cf4 using\cf3  \cf4 namespace\cf3  std;\par
+\par
+\cf4 int\cf3  main() \{\par
+\tab setlocale(0, \cf2 "Rus"\cf3 );\par
+\tab\cf4 int\cf3  a[8][8], h, l, r, r1, diag, up, chet, n = 1, vvod;\par
+\tab\cf4 char\cf3  povtor;\par
+\tab\cf4 do\cf3  \{\par
+\tab\tab system(\cf2 "cls"\cf3 );\par
+\tab\tab diag = 0;\par
+\tab\tab up = 0;\par
+\tab\tab vvod = 0;\par
+\tab\tab r = 0;\par
+\tab\tab h = 0;\par
+\tab\tab l = 0;\par
+\tab\tab cout \cf5 <<\cf3  \cf2 "\\n\f1\'c2\'e2\'e5\'e4\'e8\'f2\'e5 \'ec\'e0\'f1\'f1\'e8\'e2 \'f0\'e0\'e7\'ec\'e5\'f0\'ed\'ee\'f1\'f2\'fc \'ec\'e0\'f1\'f1\'e8\'e2\'e0"\cf3  \cf5 <<\cf3  endl;\par
+\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab cout \cf5 <<\cf3  \cf2 "\\n\'d0\'e0\'e7\'ec\'e5\'f0 \'ec\'e0\'f1\'f1\'e8\'e2\'e0 \'f0\'e0\'e2\'e5\'ed : "\cf3 ;\par
+\tab\tab\tab cin \cf5 >>\cf3  r;\par
+\tab\tab\} \cf4 while\cf3  (r == 1);\par
+\tab\tab n = 1;\par
+\tab\tab\cf4 for\cf3  (\cf4 int\cf3  i = 0; i < r; i++) \{\par
+\tab\tab\tab\cf4 for\cf3  (\cf4 int\cf3  j = 0; j < r; j++) \{\par
+\tab\tab\tab\tab a[i][j] = 0;\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\tab cout \cf5 <<\cf3  \cf2 "\'c2\'fb\'e1\'e8\'f0\'e8\'f2\'e5 : \\n1)\'c2\'e2\'ee\'e4 \'e2\'f0\'f3\'f7\'ed\'f3\'fe\\n2)\'c2\'e2\'ee\'e4 \'e0\'e2\'f2\'ee\'ec\'e0\'f2\'e8\'f7\'e5\'f1\'ea\'e8\\n"\cf3 ;\par
+\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab cin \cf5 >>\cf3  vvod;\par
+\tab\tab\tab\cf4 if\cf3  ((vvod == 1 || vvod == 2)) \{\par
+\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\}\par
+\tab\tab\tab\cf4 else\cf3  \{\par
+\tab\tab\tab\tab cout \cf5 <<\cf3  \cf2 "\'cf\'ee\'e2\'f2\'ee\'f0\'e8\'f2\'e5 \'e2\'e2\'ee\'e4\\n"\cf3 ;\par
+\tab\tab\tab\}\par
+\tab\tab\} \cf4 while\cf3  ((vvod != 1) || (vvod != 2));\par
+\par
+\tab\tab\cf4 switch\cf3  (vvod)\par
+\tab\tab\{\par
+\tab\tab\cf4 case\cf3  1: \cf4 for\cf3  (\cf4 int\cf3  i = 0; i < r; i++) \{\par
+\tab\tab\tab\cf4 for\cf3  (\cf4 int\cf3  j = 0; j < r; j++) \{\par
+\tab\tab\tab\tab cout \cf5 <<\cf3  \cf2 "a["\cf3  \cf5 <<\cf3  i \cf5 <<\cf3  \cf2 "]["\cf3  \cf5 <<\cf3  j \cf5 <<\cf3  \cf2 "] = "\cf3 ; cin \cf5 >>\cf3  a[i][j];\par
+\par
+\tab\tab\tab\}\par
+\tab\tab\}\cf4 break\cf3 ;\par
+\tab\tab\cf4 case\cf3  2:\par
+\tab\tab\tab\cf4 for\cf3  (\cf4 int\cf3  i = 0; i < r; i++) \{\par
+\tab\tab\tab\tab\cf4 for\cf3  (\cf4 int\cf3  j = 0; j < r; j++) \{\par
+\tab\tab\tab\tab\tab a[i][j] = n;\par
+\tab\tab\tab\tab\tab n++;\par
+\tab\tab\tab\tab\tab cout \cf5 <<\cf3  \cf2 "a["\cf3  \cf5 <<\cf3  i \cf5 <<\cf3  \cf2 "]["\cf3  \cf5 <<\cf3  j \cf5 <<\cf3  \cf2 "] = "\cf3  \cf5 <<\cf3  a[i][j] \cf5 <<\cf3  endl;\par
+\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\cf4 break\cf3 ;\par
+\par
+\tab\tab\}\par
+\tab\tab cout \cf5 <<\cf3  \cf2 "\\n\\t\\t\\t\\t\\t\\t\'c8\'f1\'f5\'ee\'e4\'ed\'e0\'ff \'ec\'e0\'f2\'f0\'e8\'f6\'e0 \\n\\n------------------------------------------------------------------------------------------------------------------------\\n\\n"\cf3 ;\par
+\tab\tab\cf4 for\cf3  (\cf4 int\cf3  i = 0; i < r; i++) \{\par
+\tab\tab\tab\cf4 for\cf3  (\cf4 int\cf3  j = 0; j < r; j++) \{\par
+\tab\tab\tab\tab cout \cf5 <<\cf3  a[i][j] \cf5 <<\cf3  \cf2 '\\t'\cf3 ;\par
+\tab\tab\tab\tab\cf4 if\cf3  (j == (r - 1)) \{\par
+\tab\tab\tab\tab\tab cout \cf5 <<\cf3  endl;\par
+\tab\tab\tab\tab\}\par
+\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\tab cout \cf5 <<\cf2 "\\n\\t\\t\\t\\t\\t\\t\'cf\'ee\'eb\'f3\'f7\'e5\'ed\'ed\'fb\'e9 \'e2\'fb\'e2\'ee\'e4 \\n\\n------------------------------------------------------------------------------------------------------------------------\\n\\n"\cf3 ;\par
+\tab\tab r1 = r - 1;\par
+\tab\tab h = 0;\par
+\tab\tab l = 0;\par
+\tab\tab cout \cf5 <<\cf3  \cf2 '\\n'\cf3  \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\par
+\tab\tab chet = r % 2;\par
+\tab\tab\cf4 if\cf3  (chet == 1) \{\cf6 //\'e4\'eb\'ff \'ed\'e5\'f7\'e5\'f2\'ed\'fb\'f5 \cf3\par
+\tab\tab\tab\cf4 while\cf3  ((diag == 0)) \{ \cf6 // \'e4\'ee \'e4\'e8\'e0\'e3\'ee\'ed\'e0\'eb\'e8 \cf3\par
+\tab\tab\tab\tab\cf4 if\cf3  (up == 0) \{\par
+\tab\tab\tab\tab\tab l++;\cf6 // \'e5\'f1\'eb\'e8 \'e2\'ed\'e8\'e7 \cf3\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\cf6 // \'ec\'ee\'e6\'ed\'ee \'e1\'fb\'eb\'ee while \cf3\par
+\tab\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab\tab l--;\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (l >= 0);\par
+\tab\tab\tab\tab\tab up = 1;\par
+\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\cf4 else\cf3  \{\par
+\tab\tab\tab\tab\tab h++;\cf6 // \'e5\'f1\'eb\'e8 \'e2\'e2\'e5\'f0\'f5 \cf3\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\cf6 // \'ec\'ee\'e6\'ed\'ee \'e1\'fb\'eb\'ee while \cf3\par
+\tab\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (h >= 0);\par
+\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab l--;\par
+\tab\tab\tab\tab\tab\cf4 if\cf3  ((h == 0) && (l == r1)) \{\par
+\tab\tab\tab\tab\tab\tab diag = 1;\par
+\tab\tab\tab\tab\tab\tab up = 0;\par
+\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\par
+\tab\tab\tab\tab\tab\}\par
+\par
+\tab\tab\tab\tab\tab up = 0;\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\tab\cf4 while\cf3  (diag == 1) \{\par
+\tab\tab\tab\tab\cf4 if\cf3  (up == 0) \{\par
+\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\cf6 // \'ec\'ee\'e6\'ed\'ee \'e1\'fb\'eb\'ee while \cf3\par
+\tab\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab\tab l--;\par
+\tab\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (h < r && (h >= 0));\par
+\par
+\tab\tab\tab\tab\tab up = 1;\par
+\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\cf4 else\cf3  \{\par
+\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\cf6 // \'ec\'ee\'e6\'ed\'ee \'e1\'fb\'eb\'ee while \cf3\par
+\tab\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (l < r && (l >= 0));\par
+\par
+\tab\tab\tab\tab\tab up = 0;\par
+\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab l--;\par
+\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\tab\cf4 if\cf3  (chet == 0) \{ \cf6 // \'e4\'eb\'ff \'f7\'e5\'f2\'ed\'fb\'f5 \cf3\par
+\tab\tab\tab\cf4 while\cf3  ((diag == 0)) \{ \cf6 // \'e4\'ee \'e4\'e8\'e0\'e3\'ee\'ed\'e0\'eb\'e8 \cf3\par
+\tab\tab\tab\tab\cf4 if\cf3  (up == 0) \{\par
+\tab\tab\tab\tab\tab l++;\cf6 // \'e5\'f1\'eb\'e8 \'e2\'ed\'e8\'e7 \cf3\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\par
+\tab\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab\tab l--;\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (l >= 0);\par
+\par
+\tab\tab\tab\tab\tab up = 1;\par
+\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\cf4 if\cf3  ((l == 0) && (h == r1)) \{\par
+\tab\tab\tab\tab\tab\tab diag = 1;\par
+\tab\tab\tab\tab\tab\tab up = 0;\par
+\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\cf4 else\cf3  \{\par
+\tab\tab\tab\tab\tab h++;\cf6 // \'e5\'f1\'eb\'e8 \'e2\'e2\'e5\'f0\'f5 \cf3\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\par
+\tab\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (h >= 0);\par
+\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab l--;\par
+\par
+\par
+\tab\tab\tab\tab\tab up = 0;\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\tab\cf4 while\cf3  (diag == 1) \{\par
+\tab\tab\tab\tab\cf4 if\cf3  (up == 0) \{\par
+\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\par
+\tab\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (l < r && (h >= 0));\par
+\par
+\par
+\tab\tab\tab\tab\tab l--;\par
+\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\tab up = 1;\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\cf4 else\cf3  \{\par
+\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab\cf4 do\cf3  \{\par
+\tab\tab\tab\tab\tab\tab cout \cf5 <<\cf3  a[h][l] \cf5 <<\cf3  \cf2 ' '\cf3 ;\par
+\tab\tab\tab\tab\tab\tab l--;\par
+\tab\tab\tab\tab\tab\tab h++;\par
+\tab\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\tab\} \cf4 while\cf3  (h < r);\par
+\par
+\par
+\tab\tab\tab\tab\tab l++;\par
+\tab\tab\tab\tab\tab h--;\par
+\tab\tab\tab\tab\tab\cf4 if\cf3  (((h == r1) && (l == r1)) || (h > r1) || (l > r1)) \{\par
+\tab\tab\tab\tab\tab\tab\cf4 break\cf3 ;\par
+\tab\tab\tab\tab\tab\}\par
+\tab\tab\tab\tab\tab up = 0;\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\par
+\tab\tab cout \cf5 <<\cf3  \cf2 "\\n\\n\'c2\'fb\'f7\'e8\'f1\'eb\'e8\'f2\'fc \'e5\'f9\'e5 \'ee\'e4\'ed\'f3 \'ec\'e0\'f2\'f0\'e8\'f6\'f3?(y/n) :"\cf3 ;\par
+\tab\tab cin \cf5 >>\cf3  povtor;\par
+\tab\} \cf4 while\cf3  (povtor != \cf2 'n'\cf3  && povtor == \cf2 'y'\cf3 );\par
+\tab _getch();\par
+\tab\cf4 return\cf3  0;\par
+\}\cf0\f2\fs22\lang9\par
+}
+ 
