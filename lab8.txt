@@ -1,0 +1,133 @@
+﻿emacs lab8.c
+
+1)
+
+#include <stdio.h>
+
+
+
+int main(){
+
+  printf("Hello, world!\n");//Рабочая программа
+
+  return 0;
+
+}
+
+
+
+178059@client18:~$ gcc lab8.c
+
+178059@client18:~$ ./a.out
+
+Hello, world!
+
+
+2)
+
+#include <stdio.h>
+
+
+
+int main(){
+
+  printf("Hello, world!\n");//Программа с синтаксической ошибкой, отсутствует закрывающая фигурная скобка
+
+  return 0;
+
+
+
+178059@client18:~$ gcc lab8.c
+
+lab8.c: In function ‘main’:
+lab8.c:5:3: error: expected declaration or statement at end of input
+
+   return 0;
+   ^~~~~~
+
+
+3)
+
+#include <stdio.h>
+
+
+
+int main(){
+
+  Printf("Hello, world!\n");//Программа с синтаксической ошибкой, несуществующая функция
+
+  return 0;
+
+}
+
+
+
+178059@client18:~$ gcc lab8.c
+
+lab8.c: In function ‘main’:
+lab8.c:4:3: warning: implicit declaration of function ‘Printf’ [-Wimplicit-function-declaration]
+
+   Printf("Hello, world!\n");//Программа с синтаксической ошибкой, несуществующая функция
+   ^~~~~~
+/tmp/ccHgBssp.o: 
+In function `main':
+lab8.c:(.text+0x1a): undefined reference to `Printf'
+collect2: error: ld returned 1 exit status
+
+
+4)
+
+#include <stdio.h>
+
+
+
+int main(){
+
+  int a,
+
+    b = 0;
+
+  scanf("%d",&a);
+
+  printf("%d\n",a*b);
+
+  printf("%d\n",a/b);//Ошибка времени выполнения, деление на 0
+
+  return 0;
+
+}
+
+
+
+178059@client18:~$ gcc lab8.c
+
+178059@client18:~$ ./a.out
+
+3
+0
+Floating point exception (core dumped)
+
+
+5)
+
+#include <stdio.h>
+
+
+
+int main(){
+
+  int a;
+
+  printf("%d\n",a);//Переменная с незаданным начальным значением
+
+  return 0;
+
+}
+
+
+
+178059@client18:~$ gcc lab8.c
+
+178059@client18:~$ ./a.out
+
+134513761
